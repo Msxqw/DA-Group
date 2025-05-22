@@ -4,8 +4,6 @@ from typing import Final
 
 from src.db.domain.database import Base
 
-SQL_EMPTY_LIST = Final[str] = "{}"
-
 class User(Base):
     __tablename__: str = "users"
 
@@ -13,7 +11,7 @@ class User(Base):
     email: Mapped[str] = mapped_column(nullable=False, unique=True)
     phone_number: Mapped[str] = mapped_column(nullable=False, unique=True)
     hashed_password: Mapped[str]
-    user_role: Mapped[set[str]] = mapped_column(ARRAY(String), default=SQL_EMPTY_LIST)
+    user_role: Mapped[set[str]] = mapped_column(ARRAY(String), default="{}")
     # image_avatar: Mapped[list["ImagesByUser"]] -> Подумать над m2m-связью
 
 class ImagesByUser(Base):
