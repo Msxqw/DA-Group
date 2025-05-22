@@ -21,7 +21,8 @@ async def register_user(user_data: RegisterUserSchema):
     hashed_password = get_password_hash(user_data.password)
     await UserService.create_object(
         username=user_data.username, 
-        email=user_data.email, 
+        email=user_data.email,
+        phone_number=user_data.phone_number,
         hashed_password=hashed_password
     )
 

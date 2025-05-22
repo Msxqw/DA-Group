@@ -8,8 +8,8 @@ class Settings(BaseSettings):
     DB_PASS: str
     DB_NAME: str
 
-    #SECRET_KEY: str
-   #ALGORITHM: str
+    SECRET_KEY: str
+    ALGORITHM: str
 
     @model_validator(mode="before")
     def get_database_url(cls, v):
