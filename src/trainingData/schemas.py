@@ -1,5 +1,5 @@
 from pydantic import BaseModel
 
-class PhotoSchema(BaseModel):
+class TrainingDataSchema(BaseModel):
     name: str
     path: str
